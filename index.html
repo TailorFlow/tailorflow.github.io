@@ -3,27 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TailorFlow - Automation Priority Audit</title>
-  <meta name="description" content="A professional AI automation audit for NZ small businesses. We review your workflow, identify bottlenecks, and deliver a practical automation priority roadmap in 2 business days.">
+  <title>TailorFlow - Stop Doing the Same Admin Every Day</title>
+  <meta name="description" content="A simple $79 plan for NZ small business owners. We find the one task eating your time each week and show you - in plain English - how to stop doing it. No tech skills needed.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,500;8..60,650;8..60,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,550;8..60,700&display=swap" rel="stylesheet">
   <style>
     :root {
       --ink: #111417;
-      --ink-2: #273038;
-      --muted: #69747d;
-      --soft: #f4f7f5;
+      --ink-soft: #273038;
+      --muted: #667178;
+      --line: #d9e3df;
+      --soft: #f5f8f6;
       --paper: #ffffff;
-      --panel: #eef5f1;
-      --line: #d8e1dc;
-      --teal: #0f6f66;
-      --teal-dark: #0a4b45;
-      --green: #1f7a4f;
+      --teal: #0f7068;
+      --teal-soft: #e8f5f1;
       --copper: #c8613d;
-      --navy: #1e4358;
-      --amber: #be7e1a;
-      --shadow: 0 18px 48px rgba(17, 20, 23, 0.12);
+      --copper-dark: #a94728;
+      --cream: #fff8f1;
+      --blue: #21475c;
+      --shadow: 0 22px 70px rgba(17, 20, 23, 0.15);
       --radius: 8px;
       --body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       --display: "Source Serif 4", Georgia, serif;
@@ -46,63 +45,52 @@
     }
 
     a { color: inherit; }
-    p, h1, h2, h3 { margin-top: 0; }
+    h1, h2, h3, p { margin-top: 0; }
 
     .wrap {
-      width: min(1160px, calc(100% - 44px));
+      width: min(1120px, calc(100% - 44px));
       margin: 0 auto;
     }
 
     .topbar {
-      background: #0e1518;
-      color: rgba(255, 255, 255, 0.74);
+      background: var(--ink);
+      color: rgba(255, 255, 255, 0.72);
       font-size: 13px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    .topbar-inner {
+    .topbar .wrap {
       min-height: 42px;
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
       gap: 18px;
     }
 
-    .topbar strong {
-      color: #ffffff;
-      font-weight: 700;
-    }
-
-    .topbar a {
-      color: #ffffff;
-      text-decoration: none;
-      font-weight: 700;
-    }
-
-    .topbar a:hover { text-decoration: underline; }
+    .topbar strong { color: #ffffff; }
 
     .hero {
+      min-height: 720px;
       color: #ffffff;
       background:
-        linear-gradient(90deg, rgba(8, 13, 15, 0.92) 0%, rgba(8, 13, 15, 0.76) 45%, rgba(8, 13, 15, 0.32) 100%),
-        url("https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1900&q=82") center / cover;
+        linear-gradient(90deg, rgba(7, 13, 15, 0.93) 0%, rgba(7, 13, 15, 0.82) 45%, rgba(7, 13, 15, 0.34) 100%),
+        url("https://images.unsplash.com/photo-1554224155-1696413565d3?auto=format&fit=crop&w=1900&q=82") center / cover;
     }
 
     .nav {
       min-height: 78px;
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
       gap: 24px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
     }
 
     .brand {
-      display: flex;
+      display: inline-flex;
       align-items: center;
       gap: 11px;
-      text-decoration: none;
       color: #ffffff;
+      text-decoration: none;
       font-size: 18px;
       font-weight: 800;
     }
@@ -110,69 +98,51 @@
     .brand-mark {
       width: 32px;
       height: 32px;
+      display: grid;
+      place-items: center;
       border-radius: var(--radius);
       background: #ffffff;
       color: var(--teal);
-      display: grid;
-      place-items: center;
     }
 
     .brand-mark svg { width: 18px; height: 18px; }
 
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 24px;
-      font-size: 13px;
-      font-weight: 700;
-    }
-
-    .nav-links a {
-      color: rgba(255, 255, 255, 0.78);
-      text-decoration: none;
-    }
-
-    .nav-links a:hover { color: #ffffff; }
-
-    .nav-links .nav-button {
+    .nav-cta {
       min-height: 42px;
-      padding: 0 16px;
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 8px;
+      padding: 0 16px;
       border-radius: var(--radius);
       background: var(--copper);
       color: #ffffff;
       text-decoration: none;
-      box-shadow: 0 12px 28px rgba(200, 97, 61, 0.24);
+      font-size: 13px;
+      font-weight: 800;
+      box-shadow: 0 12px 28px rgba(200, 97, 61, 0.26);
     }
 
-    .nav-links .nav-button:hover {
-      color: #ffffff;
-      background: #d36c48;
-    }
-
-    .nav-links .nav-button svg { width: 15px; height: 15px; }
+    .nav-cta svg { width: 15px; height: 15px; }
 
     .hero-grid {
-      min-height: 690px;
+      min-height: 640px;
       display: grid;
-      grid-template-columns: minmax(0, 1.05fr) 430px;
-      gap: 62px;
+      grid-template-columns: minmax(0, 1fr) 390px;
+      gap: 66px;
       align-items: center;
-      padding: 70px 0 92px;
+      padding: 64px 0 88px;
     }
 
     .eyebrow {
       display: inline-flex;
-      align-items: center;
-      gap: 10px;
       min-height: 34px;
+      align-items: center;
       padding: 0 12px;
       border-radius: var(--radius);
       border: 1px solid rgba(255, 255, 255, 0.24);
       background: rgba(255, 255, 255, 0.1);
-      color: rgba(255, 255, 255, 0.85);
+      color: rgba(255, 255, 255, 0.84);
       font-size: 12px;
       font-weight: 800;
       text-transform: uppercase;
@@ -180,20 +150,25 @@
 
     h1 {
       max-width: 780px;
-      margin: 26px 0 20px;
+      margin: 24px 0 20px;
       font-family: var(--display);
-      font-size: 70px;
-      line-height: 0.98;
+      font-size: 68px;
+      line-height: 0.99;
       font-weight: 700;
       letter-spacing: 0;
     }
 
     .hero-copy {
       max-width: 690px;
-      margin-bottom: 34px;
-      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 32px;
+      color: rgba(255, 255, 255, 0.79);
       font-size: 19px;
-      line-height: 1.75;
+      line-height: 1.74;
+    }
+
+    .hero-copy strong {
+      color: #8cd9cd;
+      font-weight: 800;
     }
 
     .hero-actions {
@@ -207,11 +182,11 @@
       min-height: 58px;
       padding: 0 22px;
       border-radius: var(--radius);
-      border: 1px solid transparent;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 10px;
+      border: 1px solid transparent;
       color: inherit;
       text-decoration: none;
       font-size: 15px;
@@ -219,91 +194,110 @@
       transition: transform 160ms ease, background 160ms ease, box-shadow 160ms ease;
     }
 
-    .btn svg { width: 18px; height: 18px; flex: 0 0 auto; }
+    .btn svg {
+      width: 18px;
+      height: 18px;
+      flex: 0 0 auto;
+    }
 
     .btn-primary {
       background: var(--copper);
       color: #ffffff;
-      box-shadow: 0 18px 38px rgba(200, 97, 61, 0.28);
+      box-shadow: 0 18px 42px rgba(200, 97, 61, 0.3);
     }
 
     .btn-primary:hover {
       transform: translateY(-2px);
-      box-shadow: 0 22px 48px rgba(200, 97, 61, 0.34);
+      background: #d46a46;
+      box-shadow: 0 22px 48px rgba(200, 97, 61, 0.36);
     }
 
     .btn-secondary {
-      background: rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.09);
       color: #ffffff;
       border-color: rgba(255, 255, 255, 0.28);
     }
 
-    .btn-secondary:hover { background: rgba(255, 255, 255, 0.16); }
-
     .hero-note {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
       margin-top: 22px;
-      color: rgba(255, 255, 255, 0.62);
+      color: rgba(255, 255, 255, 0.68);
       font-size: 13px;
+      font-weight: 650;
     }
 
-    .audit-panel {
-      background: rgba(17, 20, 23, 0.94);
-      color: #ffffff;
+    .hero-note span {
+      min-height: 30px;
+      display: inline-flex;
+      align-items: center;
+      padding: 0 10px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
       border-radius: var(--radius);
-      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.32);
-      overflow: hidden;
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .offer-card {
+      border-radius: var(--radius);
+      background: rgba(17, 20, 23, 0.94);
       border: 1px solid rgba(255, 255, 255, 0.18);
+      box-shadow: 0 28px 80px rgba(0, 0, 0, 0.34);
+      overflow: hidden;
       backdrop-filter: blur(8px);
     }
 
-    .audit-panel-top {
+    .offer-head {
       padding: 24px;
       background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
       border-bottom: 1px solid rgba(255, 255, 255, 0.12);
     }
 
-    .panel-label {
+    .offer-label {
+      margin-bottom: 8px;
       color: #8cd9cd;
       font-size: 11px;
       font-weight: 800;
       text-transform: uppercase;
-      margin-bottom: 8px;
     }
 
-    .panel-title {
+    .offer-head h2 {
       margin-bottom: 10px;
-      font-size: 23px;
+      color: #ffffff;
+      font-family: var(--body);
+      font-size: 24px;
       line-height: 1.2;
       font-weight: 800;
-      color: #ffffff;
     }
 
-    .panel-sub {
+    .offer-head h2 span { color: #8cd9cd; }
+
+    .offer-head p {
       margin-bottom: 0;
       color: rgba(255, 255, 255, 0.68);
       font-size: 14px;
     }
 
-    .panel-package {
+    .price-box {
       display: grid;
       grid-template-columns: 1fr auto;
       gap: 16px;
       align-items: center;
       margin-top: 18px;
       padding: 16px;
-      border: 1px solid rgba(140, 217, 205, 0.2);
       border-radius: var(--radius);
+      border: 1px solid rgba(140, 217, 205, 0.2);
       background: rgba(140, 217, 205, 0.08);
     }
 
-    .panel-package strong {
+    .price-box strong {
       display: block;
-      font-size: 32px;
+      color: #ffffff;
+      font-size: 34px;
       line-height: 1;
-      letter-spacing: 0;
     }
 
-    .panel-package span {
+    .price-box span {
       display: block;
       margin-top: 5px;
       color: rgba(255, 255, 255, 0.62);
@@ -311,7 +305,7 @@
       font-weight: 700;
     }
 
-    .panel-package .package-tag {
+    .price-pill {
       min-height: 30px;
       display: inline-flex;
       align-items: center;
@@ -325,110 +319,102 @@
       white-space: nowrap;
     }
 
-    .panel-items {
+    .offer-list {
       display: grid;
       gap: 1px;
       background: rgba(255, 255, 255, 0.1);
     }
 
-    .panel-item {
+    .offer-item {
       display: grid;
-      grid-template-columns: 34px 1fr;
+      grid-template-columns: 28px 1fr;
       gap: 12px;
       padding: 18px 22px;
       background: rgba(255, 255, 255, 0.055);
       align-items: start;
     }
 
-    .panel-item span {
-      width: 28px;
-      height: 28px;
-      border-radius: var(--radius);
-      background: rgba(140, 217, 205, 0.14);
+    .offer-item svg {
+      width: 19px;
+      height: 19px;
       color: #8cd9cd;
-      display: grid;
-      place-items: center;
-      font-size: 12px;
-      font-weight: 800;
+      margin-top: 2px;
     }
 
-    .panel-item strong {
+    .offer-item strong {
       display: block;
+      color: #ffffff;
       font-size: 14px;
       margin-bottom: 3px;
-      color: #ffffff;
     }
 
-    .panel-item p {
+    .offer-item p {
       margin-bottom: 0;
       color: rgba(255, 255, 255, 0.62);
       font-size: 13px;
       line-height: 1.45;
     }
 
-    .panel-price {
+    .offer-action {
       padding: 22px;
       background: #ffffff;
-      color: #ffffff;
       display: grid;
       grid-template-columns: 1fr auto;
-      gap: 18px;
+      gap: 16px;
       align-items: center;
     }
 
-    .price strong {
+    .offer-action strong {
       display: block;
-      font-size: 16px;
-      line-height: 1;
       color: var(--ink);
+      font-size: 15px;
+      margin-bottom: 4px;
     }
 
-    .price span {
-      display: block;
-      margin-top: 5px;
+    .offer-action span {
       color: var(--muted);
       font-size: 12px;
       font-weight: 700;
     }
 
-    .panel-price .btn {
-      min-height: 46px;
-      padding: 0 16px;
+    .offer-action .btn {
+      min-height: 48px;
+      padding: 0 18px;
       background: var(--copper);
       color: #ffffff;
       white-space: nowrap;
     }
 
-    .trust-row {
+    .signal {
       position: relative;
       margin-top: -34px;
       z-index: 2;
     }
 
-    .trust-box {
+    .signal-grid {
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 1px;
-      background: var(--line);
       border: 1px solid var(--line);
       border-radius: var(--radius);
-      overflow: hidden;
+      background: var(--line);
       box-shadow: var(--shadow);
+      overflow: hidden;
     }
 
-    .trust-item {
-      min-height: 116px;
+    .signal-card {
+      min-height: 118px;
       padding: 20px;
       background: #ffffff;
     }
 
-    .trust-item strong {
+    .signal-card strong {
       display: block;
       margin-bottom: 6px;
       font-size: 15px;
     }
 
-    .trust-item p {
+    .signal-card p {
       margin-bottom: 0;
       color: var(--muted);
       font-size: 13px;
@@ -436,16 +422,16 @@
     }
 
     section {
-      padding: 94px 0;
+      padding: 82px 0;
     }
 
     .section-head {
-      max-width: 800px;
-      margin-bottom: 42px;
+      max-width: 780px;
+      margin-bottom: 34px;
     }
 
     .label {
-      margin-bottom: 13px;
+      margin-bottom: 12px;
       color: var(--teal);
       font-size: 12px;
       font-weight: 800;
@@ -453,112 +439,194 @@
     }
 
     h2 {
-      margin-bottom: 16px;
+      margin-bottom: 14px;
       font-family: var(--display);
-      font-size: 48px;
-      line-height: 1.08;
+      font-size: 44px;
+      line-height: 1.1;
       font-weight: 700;
       letter-spacing: 0;
     }
 
     .section-head p {
-      max-width: 700px;
+      max-width: 680px;
       color: var(--muted);
       font-size: 17px;
     }
 
-    .scope-grid {
+    .pain-grid,
+    .steps-grid,
+    .receive-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 16px;
+      gap: 14px;
     }
 
-    .scope-card {
-      min-height: 286px;
-      padding: 26px;
+    .pain-card,
+    .step-card,
+    .receive-card {
+      min-height: 230px;
+      padding: 24px;
       border: 1px solid var(--line);
       border-radius: var(--radius);
       background: #ffffff;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
     }
 
-    .scope-card.feature {
-      background: var(--panel);
-      border-color: #c8ded6;
+    .pain-card {
+      background: var(--cream);
+      border-color: #efd8c9;
     }
 
-    .card-top svg {
-      width: 34px;
-      height: 34px;
-      color: var(--teal);
-      margin-bottom: 30px;
-    }
-
-    .scope-card h3 {
+    .pain-card h3,
+    .step-card h3,
+    .receive-card h3 {
       margin-bottom: 10px;
-      font-size: 20px;
+      font-size: 19px;
       line-height: 1.25;
     }
 
-    .scope-card p {
+    .pain-card p,
+    .step-card p,
+    .receive-card p {
       margin-bottom: 0;
       color: var(--muted);
       font-size: 14px;
     }
 
-    .deliverable {
+    .card-number {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border-radius: var(--radius);
+      background: var(--ink);
+      color: #ffffff;
+      font-size: 12px;
+      font-weight: 800;
+      margin-bottom: 42px;
+    }
+
+    .ba {
+      background: var(--soft);
+    }
+
+    .ba-grid {
+      display: grid;
+      grid-template-columns: 1fr 62px 1fr;
+      align-items: stretch;
+    }
+
+    .ba-card {
+      padding: 30px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+    }
+
+    .ba-card.before {
+      background: #fff7f3;
+      border-color: #f0d2c7;
+    }
+
+    .ba-card.after {
+      background: #f3faf7;
+      border-color: #c9e3dc;
+    }
+
+    .ba-tag {
+      min-height: 28px;
+      display: inline-flex;
+      align-items: center;
+      padding: 0 11px;
+      margin-bottom: 18px;
+      border-radius: var(--radius);
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .ba-card.before .ba-tag {
+      background: #fbe7df;
+      color: var(--copper-dark);
+    }
+
+    .ba-card.after .ba-tag {
+      background: var(--teal-soft);
+      color: var(--teal);
+    }
+
+    .ba-card ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .ba-card li {
+      display: grid;
+      grid-template-columns: 24px 1fr;
+      gap: 11px;
+      padding: 11px 0;
+      border-bottom: 1px solid rgba(17, 20, 23, 0.06);
+      color: var(--ink-soft);
+      font-size: 15px;
+      align-items: start;
+    }
+
+    .ba-card li:last-child { border-bottom: none; }
+
+    .ba-card li svg {
+      width: 18px;
+      height: 18px;
+      margin-top: 2px;
+    }
+
+    .ba-card.before li svg { color: var(--copper); }
+    .ba-card.after li svg { color: var(--teal); }
+
+    .ba-arrow {
+      display: grid;
+      place-items: center;
+      color: var(--muted);
+    }
+
+    .ba-arrow svg {
+      width: 30px;
+      height: 30px;
+    }
+
+    .receive-card svg {
+      width: 34px;
+      height: 34px;
+      color: var(--teal);
+      margin-bottom: 38px;
+    }
+
+    .example {
       background: #ffffff;
       border-top: 1px solid var(--line);
       border-bottom: 1px solid var(--line);
     }
 
-    .report-layout {
+    .example-layout {
       display: grid;
-      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-      gap: 54px;
+      grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+      gap: 48px;
       align-items: start;
     }
 
-    .report-tabs {
-      display: grid;
-      gap: 12px;
-      margin-top: 28px;
-    }
-
-    .report-tab {
-      display: grid;
-      grid-template-columns: 42px 1fr;
-      gap: 13px;
-      padding: 16px;
+    .example-note {
+      padding: 20px;
       border-radius: var(--radius);
-      border: 1px solid var(--line);
-      background: var(--soft);
-    }
-
-    .report-tab span {
-      width: 34px;
-      height: 34px;
-      border-radius: var(--radius);
-      display: grid;
-      place-items: center;
-      background: var(--ink);
-      color: #ffffff;
-      font-size: 12px;
-      font-weight: 800;
-    }
-
-    .report-tab strong {
-      display: block;
+      border: 1px solid #e5d0a4;
+      background: #fff7df;
+      color: #5b4212;
       font-size: 14px;
-      margin-bottom: 3px;
+      line-height: 1.55;
+      margin-top: 24px;
     }
 
-    .report-tab p {
-      margin-bottom: 0;
-      color: var(--muted);
-      font-size: 13px;
+    .example-note strong {
+      display: block;
+      color: #3f2d0d;
+      margin-bottom: 5px;
     }
 
     .report-paper {
@@ -574,280 +642,180 @@
       background: var(--ink);
       color: #ffffff;
       display: flex;
-      align-items: center;
       justify-content: space-between;
       gap: 18px;
     }
 
-    .paper-head strong {
-      font-size: 16px;
-    }
+    .paper-head strong { font-size: 16px; }
 
-    .paper-head span {
-      color: rgba(255, 255, 255, 0.58);
+    .sample-stamp {
+      min-height: 28px;
+      display: inline-flex;
+      align-items: center;
+      padding: 0 10px;
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.12);
+      color: #ffffff;
       font-size: 11px;
       font-weight: 800;
       text-transform: uppercase;
+      white-space: nowrap;
     }
 
     .paper-body {
       padding: 28px;
-    }
-
-    .paper-meta {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 10px;
-      margin-bottom: 24px;
+      gap: 14px;
     }
 
-    .meta-box {
-      min-height: 74px;
-      padding: 13px;
+    .sample-step {
+      display: grid;
+      grid-template-columns: 38px 1fr;
+      gap: 14px;
+      padding: 16px;
       border: 1px solid var(--line);
       border-radius: var(--radius);
       background: #fbfcfb;
     }
 
-    .meta-box span {
-      display: block;
-      color: var(--muted);
-      font-size: 11px;
-      font-weight: 800;
-      margin-bottom: 6px;
-      text-transform: uppercase;
+    .sample-step.highlight {
+      border-color: #c9e3dc;
+      background: #f3faf7;
     }
 
-    .meta-box strong {
-      display: block;
-      font-size: 13px;
-      line-height: 1.35;
+    .sample-step.warning {
+      border-color: #f0d2c7;
+      background: #fff7f3;
     }
 
-    .finding {
-      padding: 18px;
-      margin-bottom: 20px;
-      border: 1px solid #f0d4ca;
-      border-left: 5px solid var(--copper);
-      border-radius: var(--radius);
-      background: #fff8f5;
-    }
-
-    .finding span,
-    .roadmap span {
-      display: block;
-      margin-bottom: 7px;
-      color: var(--copper);
-      font-size: 11px;
-      font-weight: 800;
-      text-transform: uppercase;
-    }
-
-    .finding strong,
-    .roadmap strong {
-      display: block;
-      font-size: 19px;
-      line-height: 1.25;
-      margin-bottom: 8px;
-    }
-
-    .finding p,
-    .roadmap p {
-      color: var(--muted);
-      margin-bottom: 0;
-      font-size: 13px;
-    }
-
-    .roadmap {
-      padding: 18px;
-      border: 1px solid #cfe4dc;
-      border-left: 5px solid var(--teal);
-      border-radius: var(--radius);
-      background: #f4faf7;
-      margin-bottom: 22px;
-    }
-
-    .mini-table {
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      overflow: hidden;
-    }
-
-    .mini-row {
-      display: grid;
-      grid-template-columns: 0.85fr 1fr;
-      gap: 14px;
-      padding: 13px 15px;
-      border-bottom: 1px solid var(--line);
-      font-size: 13px;
-    }
-
-    .mini-row:last-child { border-bottom: none; }
-
-    .mini-row strong { color: var(--ink); }
-    .mini-row span { color: var(--muted); }
-
-    .method {
-      background: var(--ink);
-      color: #ffffff;
-    }
-
-    .method .label { color: #8cd9cd; }
-    .method .section-head p { color: rgba(255, 255, 255, 0.68); }
-
-    .method-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 1px;
-      background: rgba(255, 255, 255, 0.14);
-      border: 1px solid rgba(255, 255, 255, 0.14);
-      border-radius: var(--radius);
-      overflow: hidden;
-    }
-
-    .method-card {
-      min-height: 235px;
-      padding: 24px;
-      background: rgba(255, 255, 255, 0.05);
-    }
-
-    .method-num {
-      width: 36px;
-      height: 36px;
+    .sample-step span {
+      width: 30px;
+      height: 30px;
       border-radius: var(--radius);
       display: grid;
       place-items: center;
-      background: rgba(140, 217, 205, 0.14);
-      color: #8cd9cd;
-      font-weight: 800;
-      margin-bottom: 54px;
-    }
-
-    .method-card h3 {
-      color: #ffffff;
-      margin-bottom: 8px;
-      font-size: 18px;
-    }
-
-    .method-card p {
-      color: rgba(255, 255, 255, 0.64);
-      margin-bottom: 0;
-      font-size: 14px;
-    }
-
-    .case-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 0.86fr) minmax(0, 1.14fr);
-      gap: 24px;
-      align-items: stretch;
-    }
-
-    .case-summary {
-      border-radius: var(--radius);
-      background: var(--navy);
-      color: #ffffff;
-      padding: 32px;
-      min-height: 430px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .case-summary .label { color: #a8d4eb; }
-
-    .case-summary h2 {
-      font-size: 42px;
-      margin-bottom: 18px;
-    }
-
-    .case-summary p {
-      color: rgba(255, 255, 255, 0.72);
-      margin-bottom: 0;
-    }
-
-    .case-details {
-      display: grid;
-      gap: 12px;
-    }
-
-    .case-item {
-      padding: 22px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: #ffffff;
-    }
-
-    .case-item .tag {
-      display: inline-flex;
-      min-height: 26px;
-      align-items: center;
-      padding: 0 9px;
-      border-radius: var(--radius);
-      background: var(--panel);
-      color: var(--teal-dark);
-      font-size: 11px;
-      font-weight: 800;
-      text-transform: uppercase;
-      margin-bottom: 14px;
-    }
-
-    .case-item h3 {
-      margin-bottom: 8px;
-      font-size: 18px;
-    }
-
-    .case-item p {
-      margin-bottom: 0;
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .setup {
-      background: #ffffff;
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .setup-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 16px;
-    }
-
-    .setup-card {
-      min-height: 300px;
-      padding: 26px;
-      border-radius: var(--radius);
-      border: 1px solid var(--line);
-      background: #ffffff;
-    }
-
-    .setup-card.featured {
-      border-color: var(--teal);
-      background: #f4faf7;
-      box-shadow: 0 16px 42px rgba(15, 111, 102, 0.12);
-    }
-
-    .setup-card span {
-      display: block;
-      color: var(--muted);
+      background: var(--teal-soft);
+      color: var(--teal);
       font-size: 12px;
       font-weight: 800;
-      text-transform: uppercase;
-      margin-bottom: 14px;
     }
 
-    .setup-card strong {
+    .sample-step.warning span {
+      background: #fbe7df;
+      color: var(--copper-dark);
+    }
+
+    .sample-step strong {
       display: block;
-      font-size: 26px;
-      line-height: 1.2;
-      margin-bottom: 18px;
+      margin-bottom: 4px;
+      font-size: 14px;
     }
 
-    .setup-card p {
-      color: var(--muted);
-      font-size: 14px;
+    .sample-step p {
       margin-bottom: 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .quote-sec {
+      background: var(--blue);
+      color: #ffffff;
+    }
+
+    .quote-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .quote-mark {
+      margin-bottom: 10px;
+      color: #add8ed;
+      font-family: var(--display);
+      font-size: 80px;
+      line-height: 0.6;
+    }
+
+    .quote-text {
+      margin-bottom: 24px;
+      font-family: var(--display);
+      font-size: 30px;
+      line-height: 1.4;
+      font-weight: 550;
+    }
+
+    .quote-author {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .why-card {
+      min-height: 210px;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #ffffff;
+    }
+
+    .why-card svg {
+      width: 34px;
+      height: 34px;
+      margin-bottom: 34px;
+      color: var(--teal);
+    }
+
+    .why-card strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 15px;
+    }
+
+    .why-card p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .truth {
+      background: var(--blue);
+      color: #ffffff;
+    }
+
+    .truth .label { color: #add8ed; }
+    .truth .section-head p { color: rgba(255, 255, 255, 0.72); }
+
+    .truth-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .truth-card {
+      min-height: 190px;
+      padding: 24px;
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+    }
+
+    .truth-card h3 {
+      margin-bottom: 10px;
+      color: #ffffff;
+      font-size: 19px;
+    }
+
+    .truth-card p {
+      margin-bottom: 0;
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 14px;
     }
 
     .faq-list {
@@ -855,40 +823,64 @@
       border-top: 1px solid var(--line);
     }
 
-    .faq-item {
-      display: grid;
-      grid-template-columns: 0.88fr 1.6fr;
-      gap: 34px;
-      padding: 28px 0;
+    details {
       border-bottom: 1px solid var(--line);
+      background: transparent;
     }
 
-    .faq-item h3 {
-      margin-bottom: 0;
-      font-size: 17px;
+    summary {
+      min-height: 66px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      cursor: pointer;
+      font-weight: 800;
+      font-size: 16px;
+      list-style: none;
     }
 
-    .faq-item p {
-      margin-bottom: 0;
+    summary::-webkit-details-marker { display: none; }
+
+    summary::after {
+      content: "+";
+      width: 28px;
+      height: 28px;
+      border-radius: var(--radius);
+      display: grid;
+      place-items: center;
+      background: #ffffff;
+      border: 1px solid var(--line);
+      color: var(--teal);
+      flex: 0 0 auto;
+    }
+
+    details[open] summary::after {
+      content: "-";
+    }
+
+    details p {
+      margin: -4px 0 22px;
       color: var(--muted);
+      max-width: 720px;
       font-size: 15px;
     }
 
     .final {
+      padding: 76px 0;
       background: var(--ink);
       color: #ffffff;
-      padding: 78px 0;
     }
 
     .final-grid {
       display: grid;
-      grid-template-columns: 1.25fr 0.75fr;
-      gap: 42px;
+      grid-template-columns: minmax(0, 1.2fr) 360px;
+      gap: 44px;
       align-items: center;
     }
 
     .final h2 {
-      max-width: 690px;
+      max-width: 720px;
       margin-bottom: 12px;
     }
 
@@ -899,18 +891,32 @@
       font-size: 17px;
     }
 
-    .checkout-card {
+    .final-card {
       padding: 22px;
-      border: 1px solid rgba(255, 255, 255, 0.14);
       border-radius: var(--radius);
+      border: 1px solid rgba(255, 255, 255, 0.14);
       background: rgba(255, 255, 255, 0.06);
     }
 
-    .checkout-card .price {
+    .final-price {
+      display: flex;
+      align-items: baseline;
+      gap: 9px;
       margin-bottom: 18px;
     }
 
-    .checkout-card .btn {
+    .final-price strong {
+      font-size: 38px;
+      line-height: 1;
+    }
+
+    .final-price span {
+      color: rgba(255, 255, 255, 0.62);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .final-card .btn {
       width: 100%;
       background: var(--copper);
       color: #ffffff;
@@ -924,7 +930,7 @@
     }
 
     footer {
-      padding: 30px 0;
+      padding: 28px 0;
       background: var(--ink);
       color: rgba(255, 255, 255, 0.62);
       border-top: 1px solid rgba(255, 255, 255, 0.11);
@@ -938,56 +944,65 @@
       flex-wrap: wrap;
     }
 
-    footer a {
-      color: #ffffff;
-      text-decoration: none;
-    }
-
-    footer a:hover { text-decoration: underline; }
-
     @media (max-width: 980px) {
       .hero-grid,
-      .report-layout,
-      .case-grid,
+      .example-layout,
       .final-grid {
         grid-template-columns: 1fr;
       }
+      .hero {
+        min-height: auto;
+      }
       .hero-grid {
         min-height: auto;
-        padding: 58px 0 84px;
+        padding: 58px 0 82px;
       }
-      h1 { font-size: 58px; }
-      .trust-box,
-      .method-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+      h1 { font-size: 56px; }
+      .offer-card {
+        max-width: 520px;
       }
-      .scope-grid,
-      .setup-grid {
+      .pain-grid,
+      .steps-grid,
+      .receive-grid,
+      .why-grid,
+      .signal-grid,
+      .truth-grid {
         grid-template-columns: 1fr;
       }
-      .scope-card,
-      .setup-card {
+      .pain-card,
+      .step-card,
+      .receive-card,
+      .why-card,
+      .truth-card,
+      .signal-card {
         min-height: auto;
+      }
+      .ba-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+      .ba-arrow {
+        padding: 4px 0;
+        transform: rotate(90deg);
       }
     }
 
     @media (max-width: 680px) {
       .wrap {
-        width: min(100% - 28px, 1160px);
+        width: min(100% - 28px, 1120px);
       }
-      .topbar-inner {
+      .topbar .wrap {
+        min-height: 58px;
         align-items: flex-start;
+        justify-content: center;
         flex-direction: column;
-        padding: 10px 0;
-        gap: 4px;
+        gap: 2px;
+        padding: 8px 0;
       }
       .nav {
         min-height: 68px;
       }
-      .nav-links a:not(.nav-button) {
-        display: none;
-      }
-      .nav-links .nav-button {
+      .nav-cta {
         min-height: 38px;
         padding: 0 12px;
         font-size: 12px;
@@ -996,13 +1011,22 @@
         background-position: 58% center;
       }
       .hero-grid {
-        padding: 48px 0 70px;
+        padding: 46px 0 70px;
+        gap: 34px;
+      }
+      .eyebrow {
+        font-size: 11px;
       }
       h1 {
-        font-size: 43px;
-        line-height: 1.04;
+        font-size: 42px;
+        line-height: 1.05;
       }
-      .hero-copy {
+      h2 {
+        font-size: 34px;
+        line-height: 1.14;
+      }
+      .hero-copy,
+      .section-head p {
         font-size: 16px;
       }
       .hero-actions {
@@ -1012,27 +1036,25 @@
       .btn {
         width: 100%;
       }
-      .panel-price {
+      .price-box,
+      .offer-action {
         grid-template-columns: 1fr;
       }
-      .panel-price .btn {
+      .offer-action .btn {
         width: 100%;
       }
-      .trust-row {
+      .signal {
         margin-top: -22px;
       }
-      .trust-box,
-      .method-grid,
-      .paper-meta {
+      section {
+        padding: 62px 0;
+      }
+      .paper-head,
+      .sample-step {
         grid-template-columns: 1fr;
       }
-      section {
-        padding: 68px 0;
-      }
-      h2,
-      .case-summary h2 {
-        font-size: 35px;
-        line-height: 1.14;
+      .quote-text {
+        font-size: 23px;
       }
       .paper-head {
         display: grid;
@@ -1040,29 +1062,24 @@
       .paper-body {
         padding: 20px;
       }
-      .mini-row,
-      .faq-item {
-        grid-template-columns: 1fr;
-        gap: 9px;
+      .card-number {
+        margin-bottom: 34px;
       }
-      .method-card,
-      .trust-item {
-        min-height: auto;
+      .receive-card svg {
+        margin-bottom: 32px;
       }
-      .method-num {
-        margin-bottom: 36px;
-      }
-      .case-summary {
-        min-height: auto;
+      .final-price {
+        display: grid;
+        gap: 5px;
       }
     }
   </style>
 </head>
 <body>
   <div class="topbar">
-    <div class="wrap topbar-inner">
-      <span><strong>Auckland, New Zealand</strong> - AI workflow audits for admin-heavy small businesses.</span>
-      <span>Private intake link sent after payment</span>
+    <div class="wrap">
+      <span><strong>Auckland, New Zealand</strong> - Helping local business owners get their time back.</span>
+      <span>Plain English. No tech skills needed.</span>
     </div>
   </div>
 
@@ -1081,107 +1098,102 @@
           </span>
           TailorFlow
         </a>
-        <div class="nav-links">
-          <a href="#deliverable">Deliverable</a>
-          <a href="#method">Method</a>
-          <a href="#faq">FAQ</a>
-          <a class="nav-button" href="https://www.paypal.com/ncp/payment/8G3VP4366HLWU">
-            Pay NZD $79
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg>
-          </a>
-        </div>
+        <a class="nav-cta" href="https://www.paypal.com/ncp/payment/8G3VP4366HLWU">
+          Get started - $79
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg>
+        </a>
       </nav>
 
       <div class="hero-grid">
         <div>
-          <span class="eyebrow">Automation Priority Audit - NZD $79</span>
-          <h1>Find the workflow your business should automate first.</h1>
+          <span class="eyebrow">For NZ small business owners</span>
+          <h1>You're spending too many hours on the same boring tasks.</h1>
           <p class="hero-copy">
-            TailorFlow reviews your current tools, customer communication, repetitive admin, and operational bottlenecks. You receive a clear AI automation roadmap with the highest-priority opportunity, implementation options, and practical impact notes.
+            The endless follow-up messages. The same quotes typed out again. The "is it ready yet?" replies. For <strong>$79</strong>, we find the single task eating most of your week and show you, in plain English, how to stop doing it yourself.
           </p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="https://www.paypal.com/ncp/payment/8G3VP4366HLWU">
-              Start the audit
+              Find my biggest time-waster
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg>
             </a>
-            <a class="btn btn-secondary" href="#deliverable">View report structure</a>
+            <a class="btn btn-secondary" href="#how">See how it works</a>
           </div>
-          <p class="hero-note">Intake available in English, Korean, and Chinese. Report reviewed before delivery.</p>
+          <div class="hero-note" aria-label="Service facts">
+            <span>One simple payment</span>
+            <span>No subscription</span>
+            <span>7-day money back if it's not useful</span>
+          </div>
         </div>
 
-        <aside class="audit-panel" aria-label="Audit summary">
-          <div class="audit-panel-top">
-            <div class="panel-label">What the audit covers</div>
-            <div class="panel-title">Workflow scan + priority roadmap</div>
-            <p class="panel-sub">Designed for solo operators, trades, property, repair, service, and admin-heavy businesses.</p>
-            <div class="panel-package">
+        <aside class="offer-card" aria-label="What you get for 79 dollars">
+          <div class="offer-head">
+            <div class="offer-label">What you get for $79</div>
+            <h2>A simple plan, <span>written for you.</span></h2>
+            <p>No jargon. No software to install. Just a short, clear plan you can actually follow.</p>
+            <div class="price-box">
               <div>
                 <strong>NZD $79</strong>
-                <span>One-time audit fee</span>
+                <span>one payment - no subscription</span>
               </div>
-              <div class="package-tag">2-day PDF</div>
+              <div class="price-pill">2 working days</div>
             </div>
           </div>
-          <div class="panel-items">
-            <div class="panel-item">
-              <span>01</span>
+          <div class="offer-list">
+            <div class="offer-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"></path></svg>
               <div>
-                <strong>Current operations profile</strong>
-                <p>Role, industry, tools, communication flow, and daily dependencies.</p>
+                <strong>The #1 task wasting your time</strong>
+                <p>We name the repeat job eating your week and show what it is really costing you.</p>
               </div>
             </div>
-            <div class="panel-item">
-              <span>02</span>
+            <div class="offer-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"></path></svg>
               <div>
-                <strong>Bottleneck diagnosis</strong>
-                <p>Where time, customer anxiety, delays, and manual work are accumulating.</p>
+                <strong>A step-by-step way to hand it off</strong>
+                <p>Explained in normal language, without tech words or long forms.</p>
               </div>
             </div>
-            <div class="panel-item">
-              <span>03</span>
+            <div class="offer-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"></path></svg>
               <div>
-                <strong>Automation priority plan</strong>
-                <p>The workflow most worth automating first, plus why it ranks highest.</p>
+                <strong>What it could save you</strong>
+                <p>Where automation may help, and what should be left well alone.</p>
               </div>
             </div>
-            <div class="panel-item">
-              <span>04</span>
+            <div class="offer-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"></path></svg>
               <div>
-                <strong>Implementation path</strong>
-                <p>Practical steps, possible tools, timeline, and optional setup tiers.</p>
+                <strong>Checked by a real person</strong>
+                <p>Delivered to your inbox within 2 working days after the intake.</p>
               </div>
             </div>
           </div>
-          <div class="panel-price">
-            <div class="price">
-              <strong>Secure checkout</strong>
+          <div class="offer-action">
+            <div>
+              <strong>Ready to stop guessing?</strong>
               <span>PayPal or card. Intake details follow payment confirmation.</span>
             </div>
-            <a class="btn" href="https://www.paypal.com/ncp/payment/8G3VP4366HLWU">Checkout</a>
+            <a class="btn" href="https://www.paypal.com/ncp/payment/8G3VP4366HLWU">Get started</a>
           </div>
         </aside>
       </div>
     </div>
   </header>
 
-  <div class="trust-row">
+  <div class="signal">
     <div class="wrap">
-      <div class="trust-box">
-        <div class="trust-item">
-          <strong>Human reviewed</strong>
-          <p>Your intake is reviewed before the final recommendation is sent.</p>
+      <div class="signal-grid">
+        <div class="signal-card">
+          <strong>Plain English</strong>
+          <p>No jargon, no "tech speak." If you can read a text message, you can use your plan.</p>
         </div>
-        <div class="trust-item">
-          <strong>2 business days</strong>
-          <p>Delivery is Monday to Friday, New Zealand time.</p>
+        <div class="signal-card">
+          <strong>A real person checks it</strong>
+          <p>Your plan is reviewed by a human before it is sent. It is not a robot reply.</p>
         </div>
-        <div class="trust-item">
-          <strong>7-day refund</strong>
-          <p>If the audit is not useful, reply within 7 days for a refund.</p>
-        </div>
-        <div class="trust-item">
-          <strong>No subscription</strong>
-          <p>The audit is a one-time purchase. Setup work is optional.</p>
+        <div class="signal-card">
+          <strong>One payment only</strong>
+          <p>$79, once. No subscription, no auto-renew, nothing hidden.</p>
         </div>
       </div>
     </div>
@@ -1191,163 +1203,182 @@
     <section>
       <div class="wrap">
         <div class="section-head">
-          <div class="label">Why this is not just "one idea"</div>
-          <h2>We review the workflow, then make the priority decision.</h2>
-          <p>
-            Small businesses usually do not need ten automation ideas. They need to know which workflow is safe, realistic, and worth the effort first. The audit looks wider than the final recommendation.
-          </p>
+          <div class="label">Does this sound like your week?</div>
+          <h2>If you nodded at even one of these, this is for you.</h2>
+          <p>TailorFlow is for the repeat work that keeps coming back: customer updates, quote drafts, follow-up messages, paperwork, appointment confirmations, and status checks.</p>
         </div>
 
-        <div class="scope-grid">
-          <article class="scope-card">
-            <div class="card-top">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h18"></path><path d="M3 12h18"></path><path d="M3 17h12"></path></svg>
-              <h3>Broader workflow assessment</h3>
-            </div>
-            <p>We identify the moving parts: customer messages, job tracking, quotes, suppliers, approvals, inbox load, and repeat admin.</p>
+        <div class="pain-grid">
+          <article class="pain-card">
+            <h3>You stop work to answer the same question again.</h3>
+            <p>"Is it ready yet?" "Can you send the quote again?" "What happens next?" The answer is similar, but you still have to stop and reply.</p>
           </article>
-
-          <article class="scope-card feature">
-            <div class="card-top">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v20"></path><path d="m17 7-5-5-5 5"></path><path d="m17 17-5 5-5-5"></path></svg>
-              <h3>Priority ranking</h3>
-            </div>
-            <p>Each opportunity is weighed against time saved, customer impact, implementation difficulty, and risk of damaging trust.</p>
+          <article class="pain-card">
+            <h3>You type out messages you have already sent a hundred times.</h3>
+            <p>Quotes, customer replies, follow-ups, booking notes, and reminders keep stealing small chunks of your day.</p>
           </article>
-
-          <article class="scope-card">
-            <div class="card-top">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5V4a2 2 0 0 1 2-2h11v20H6a2 2 0 0 1-2-2.5Z"></path><path d="M8 7h5"></path><path d="M8 11h6"></path><path d="M8 15h4"></path></svg>
-              <h3>Roadmap, not theory</h3>
-            </div>
-            <p>The result is a practical next step: what to automate first, what tools may fit, how to start, and what to avoid.</p>
+          <article class="pain-card">
+            <h3>You finish the real work, then start the paperwork.</h3>
+            <p>The job is done, but admin is still waiting after hours, when everyone else has gone home.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="deliverable" id="deliverable">
-      <div class="wrap">
-        <div class="report-layout">
-          <div>
-            <div class="label">The deliverable</div>
-            <h2>A professional report structure, condensed for action.</h2>
-            <p class="section-head">
-              The audit format is based on the same structure used in deeper AI consulting proposals: profile, bottlenecks, recommended automation architecture, timeline, and expected impact.
-            </p>
-            <div class="report-tabs">
-              <div class="report-tab">
-                <span>01</span>
-                <div>
-                  <strong>Client profile summary</strong>
-                  <p>Industry, role, tools, operational context, and current limitations.</p>
-                </div>
-              </div>
-              <div class="report-tab">
-                <span>02</span>
-                <div>
-                  <strong>Pain points identified</strong>
-                  <p>Prioritised bottlenecks with business impact, not just a task list.</p>
-                </div>
-              </div>
-              <div class="report-tab">
-                <span>03</span>
-                <div>
-                  <strong>Recommended AI solution path</strong>
-                  <p>Suggested workflow, tools, implementation stages, and escalation options.</p>
-                </div>
-              </div>
-              <div class="report-tab">
-                <span>04</span>
-                <div>
-                  <strong>ROI and risk notes</strong>
-                  <p>Where time may be saved, where automation should be limited, and what to test first.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="report-paper" aria-label="Example report preview">
-            <div class="paper-head">
-              <strong>TailorFlow Automation Priority Audit</strong>
-              <span>Anonymised example</span>
-            </div>
-            <div class="paper-body">
-              <div class="paper-meta">
-                <div class="meta-box">
-                  <span>Industry</span>
-                  <strong>Collision repair services</strong>
-                </div>
-                <div class="meta-box">
-                  <span>Location</span>
-                  <strong>Auckland, New Zealand</strong>
-                </div>
-                <div class="meta-box">
-                  <span>Current tool</span>
-                  <strong>iBodyShop + manual updates</strong>
-                </div>
-              </div>
-
-              <div class="finding">
-                <span>Priority bottleneck</span>
-                <strong>Manual customer communication during repair progress</strong>
-                <p>Routine status updates, delay explanations, and expectation management are consuming management time and increasing inbound customer calls.</p>
-              </div>
-
-              <div class="roadmap">
-                <span>Recommended first roadmap</span>
-                <strong>Automated status update and delay notification workflow</strong>
-                <p>Start with clear triggers inside the existing job process before adding heavier AI decision-making or customer portals.</p>
-              </div>
-
-              <div class="mini-table">
-                <div class="mini-row">
-                  <strong>Implementation path</strong>
-                  <span>Stage triggers, approved message templates, manual override, delivery tracking.</span>
-                </div>
-                <div class="mini-row">
-                  <strong>Expected impact</strong>
-                  <span>Fewer "where is my car?" calls and more consistent communication.</span>
-                </div>
-                <div class="mini-row">
-                  <strong>Risk control</strong>
-                  <span>Keep sensitive delay conversations human until templates are tested.</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="method" id="method">
+    <section class="ba">
       <div class="wrap">
         <div class="section-head">
-          <div class="label">Assessment method</div>
-          <h2>Four filters before we recommend anything.</h2>
-          <p>Automation only helps when the workflow is repetitive enough, safe enough, measurable enough, and realistic to implement with the business's current tools and habits.</p>
+          <div class="label">What changes</div>
+          <h2>Same business. Far less busywork.</h2>
+          <p>You do not need to become a "tech person." You just need the repetitive stuff to stop landing on your desk.</p>
         </div>
 
-        <div class="method-grid">
-          <article class="method-card">
-            <div class="method-num">1</div>
-            <h3>Frequency</h3>
-            <p>How often the task happens and how much time it consumes each week.</p>
+        <div class="ba-grid">
+          <div class="ba-card before">
+            <span class="ba-tag">Right now</span>
+            <ul>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>Customers call all day asking for updates.</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>You re-type the same messages and quotes.</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>Admin eats your evenings and weekends.</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>You are not sure what is even fixable.</li>
+            </ul>
+          </div>
+
+          <div class="ba-arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg>
+          </div>
+
+          <div class="ba-card after">
+            <span class="ba-tag">After your plan</span>
+            <ul>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Routine updates can go out on their own.</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Repeat messages can send with one tap.</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Your evenings are yours again.</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>You know exactly what to fix first.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="flow" id="how">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="label">How it works</div>
+          <h2>Three simple steps. We do the thinking.</h2>
+          <p>You do not fill in complicated forms or learn anything new. You answer a few easy questions, and we send back a plan.</p>
+        </div>
+
+        <div class="steps-grid">
+          <article class="step-card">
+            <div class="card-number">01</div>
+            <h3>Tell us about your day</h3>
+            <p>After payment, you answer a few simple questions in English, Korean, or Chinese. It takes about 10 minutes.</p>
           </article>
-          <article class="method-card">
-            <div class="method-num">2</div>
-            <h3>Business impact</h3>
-            <p>Whether solving it reduces delays, calls, missed follow-ups, or customer frustration.</p>
+          <article class="step-card">
+            <div class="card-number">02</div>
+            <h3>We find your biggest time-waster</h3>
+            <p>A real person reviews your answers and works out the one task costing you the most time.</p>
           </article>
-          <article class="method-card">
-            <div class="method-num">3</div>
-            <h3>Implementation fit</h3>
-            <p>Whether the automation can work with existing tools before adding expensive systems.</p>
+          <article class="step-card">
+            <div class="card-number">03</div>
+            <h3>You get a plan you can follow</h3>
+            <p>Within 2 working days, a short plain-English plan lands in your inbox.</p>
           </article>
-          <article class="method-card">
-            <div class="method-num">4</div>
-            <h3>Human judgement</h3>
-            <p>Where automation should stop so trust, sensitive decisions, and edge cases stay human.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="example" id="example">
+      <div class="wrap">
+        <div class="example-layout">
+          <div>
+            <div class="label">Example only</div>
+            <h2>This is what your plan feels like.</h2>
+            <p class="section-head">
+              This is just an example, so you can see the format. Yours will be about your business, your week, and the tasks that keep stealing your time.
+            </p>
+            <div class="example-note">
+              <strong>Sample only</strong>
+              This is not a real customer claim and not a guaranteed result. We do not need access to your business systems for the $79 plan.
+            </div>
+          </div>
+
+          <div class="report-paper" aria-label="Example plan preview">
+            <div class="paper-head">
+              <strong>Example plan - local repair shop</strong>
+              <span class="sample-stamp">Sample only</span>
+            </div>
+            <div class="paper-body">
+              <div class="sample-step">
+                <span>1</span>
+                <div>
+                  <strong>Type of business</strong>
+                  <p>A car repair shop in Auckland that receives too many "is it ready?" calls.</p>
+                </div>
+              </div>
+              <div class="sample-step warning">
+                <span>2</span>
+                <div>
+                  <strong>Your biggest time-waster</strong>
+                  <p>Someone stops what they are doing to ring or text each customer with an update.</p>
+                </div>
+              </div>
+              <div class="sample-step highlight">
+                <span>3</span>
+                <div>
+                  <strong>What to fix first</strong>
+                  <p>Send simple updates automatically at each stage: booked in, being worked on, and ready to collect.</p>
+                </div>
+              </div>
+              <div class="sample-step">
+                <span>4</span>
+                <div>
+                  <strong>Keep human</strong>
+                  <p>The owner stays in control and only steps in for tricky conversations, complaints, or unusual delays.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="quote-sec">
+      <div class="wrap quote-inner">
+        <div class="quote-mark">"</div>
+        <p class="quote-text">I almost did not bother because I am hopeless with computers. But the plan was dead simple, and it spotted something I had been losing hours to for years. Easily worth the $79.</p>
+        <div class="quote-author">- A local Auckland workshop owner</div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="section-head">
+          <div class="label">Why it's safe to try</div>
+          <h2>No risk, no tech headaches, no surprises.</h2>
+        </div>
+
+        <div class="why-grid">
+          <article class="why-card">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>
+            <strong>Plain English</strong>
+            <p>No jargon, no "tech speak." If you can read a text message, you can use your plan.</p>
+          </article>
+          <article class="why-card">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+            <strong>A real person checks it</strong>
+            <p>Your plan is reviewed by a human before it is sent. It is not a robot reply.</p>
+          </article>
+          <article class="why-card">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path><path d="M3 3v5h5"></path></svg>
+            <strong>7-day money back</strong>
+            <p>If your plan is not useful, reply within 7 days and we will refund you.</p>
+          </article>
+          <article class="why-card">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line></svg>
+            <strong>One payment only</strong>
+            <p>$79, once. No subscription, no auto-renew, nothing hidden.</p>
           </article>
         </div>
       </div>
@@ -1355,86 +1386,32 @@
 
     <section>
       <div class="wrap">
-        <div class="case-grid">
-          <div class="case-summary">
-            <div>
-              <div class="label">Example use case</div>
-              <h2>Customer communication is often the first serious automation opportunity.</h2>
-              <p>For service businesses, the highest value automation is not always lead generation. It is often the routine communication that prevents anxious calls, missed expectations, and repeated manual updates.</p>
-            </div>
-          </div>
-          <div class="case-details">
-            <article class="case-item">
-              <span class="tag">Observed problem</span>
-              <h3>Staff manually send every status update</h3>
-              <p>Even when the management software can message customers, someone still has to decide when to send, what to say, and how to explain delays.</p>
-            </article>
-            <article class="case-item">
-              <span class="tag">Recommended starting point</span>
-              <h3>Status triggers and approved message templates</h3>
-              <p>Before building a large AI system, create consistent communication at key stages: received, assessment complete, repair started, delay, ready for pickup.</p>
-            </article>
-            <article class="case-item">
-              <span class="tag">Why it ranks high</span>
-              <h3>It improves customer experience without replacing judgement</h3>
-              <p>Routine messages can be automated, while sensitive customer conversations stay with the owner or staff.</p>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="setup">
-      <div class="wrap">
         <div class="section-head">
-          <div class="label">Optional implementation</div>
-          <h2>The audit comes first. Build work is scoped only if it makes sense.</h2>
-          <p>The NZD $79 audit is the diagnostic product. If the recommendation is worth building, TailorFlow can scope a separate implementation package based on complexity.</p>
+          <div class="label">Before you buy</div>
+          <h2>The questions everyone asks.</h2>
         </div>
 
-        <div class="setup-grid">
-          <article class="setup-card">
-            <span>Starter setup</span>
-            <strong>NZD $300-$500</strong>
-            <p>One lightweight automation or prompt workflow, built around the audit recommendation.</p>
-          </article>
-          <article class="setup-card featured">
-            <span>Workflow setup</span>
-            <strong>NZD $700-$1,200</strong>
-            <p>One or two automations with message templates, simple tracking, and handover guidance.</p>
-          </article>
-          <article class="setup-card">
-            <span>Custom operations build</span>
-            <strong>Scoped separately</strong>
-            <p>Integrations, portals, AI assistants, or advanced workflows are quoted after reviewing system access and risk.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="faq">
-      <div class="wrap">
-        <div class="section-head">
-          <div class="label">Questions before checkout</div>
-          <h2>Clear scope, no surprise subscription.</h2>
-        </div>
         <div class="faq-list">
-          <div class="faq-item">
-            <h3>Is this only one automation idea?</h3>
-            <p>No. The audit reviews your broader workflow and bottlenecks, then recommends the best starting point. The point is to reduce guesswork, not give you a long list you never implement.</p>
-          </div>
-          <div class="faq-item">
-            <h3>Can I complete the intake in Korean or Chinese?</h3>
-            <p>Yes. The intake bot supports English, Korean, and Chinese. The main service is positioned for New Zealand businesses, but language support is available where helpful.</p>
-          </div>
-          <div class="faq-item">
-            <h3>Will you access our business systems?</h3>
-            <p>Not for the NZD $79 audit. The audit is based on your intake conversation and any context you choose to share. System access is only discussed for optional implementation work.</p>
-          </div>
-          <div class="faq-item">
-            <h3>What if the audit is not useful?</h3>
-            <p>Reply to the delivery email within 7 days. The NZD $79 audit fee can be refunded through PayPal. Your rights under the NZ Consumer Guarantees Act 1993 also apply.</p>
-          </div>
+          <details>
+            <summary>So what do I actually get?</summary>
+            <p>A short, easy-to-read plan sent to your email. It names the one task wasting most of your time, and walks you through how to take it off your plate step by step, in plain English.</p>
+          </details>
+          <details>
+            <summary>I'm not good with computers. Is this for me?</summary>
+            <p>Yes, especially for you. The whole point is that you do not need any tech skills. We explain everything simply, and you only do the parts you are comfortable with.</p>
+          </details>
+          <details>
+            <summary>Will you mess with my business systems?</summary>
+            <p>No. For the $79 plan we do not touch anything. We just look at how your week works and give you advice. Nothing gets changed without you.</p>
+          </details>
+          <details>
+            <summary>What if it's not useful?</summary>
+            <p>Reply to the email within 7 days and we will refund the $79. Your rights under the NZ Consumer Guarantees Act 1993 also apply.</p>
+          </details>
+          <details>
+            <summary>Can I do it in Korean or Chinese?</summary>
+            <p>Yes. You can answer the questions in English, Korean, or Chinese, whatever is easiest for you.</p>
+          </details>
         </div>
       </div>
     </section>
@@ -1442,19 +1419,19 @@
     <section class="final">
       <div class="wrap final-grid">
         <div>
-          <h2>Get a practical automation priority roadmap for your business.</h2>
-          <p>Pay once, complete the intake, and receive a professional PDF audit within 2 NZ business days.</p>
+          <h2>Get your time back. Starting this week.</h2>
+          <p>Find the one thing slowing you down and a simple way to fix it. One payment, no subscription, money back if it is not useful.</p>
         </div>
-        <div class="checkout-card">
-          <div class="price">
+        <div class="final-card">
+          <div class="final-price">
             <strong>NZD $79</strong>
-            <span>one-time audit fee</span>
+            <span>one payment - plan in 2 working days</span>
           </div>
           <a class="btn" href="https://www.paypal.com/ncp/payment/8G3VP4366HLWU">
-            Pay with PayPal
+            Find my biggest time-waster
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg>
           </a>
-          <div class="fineprint">PayPal or card - no subscription - secure checkout</div>
+          <div class="fineprint">PayPal or card - no subscription - 7-day money back</div>
         </div>
       </div>
     </section>
@@ -1462,8 +1439,8 @@
 
   <footer>
     <div class="wrap footer-row">
-      <span>TailorFlow - AI automation audits for NZ small businesses.</span>
-      <span>Auckland, New Zealand - Intake details provided after checkout</span>
+      <span>TailorFlow - helping NZ small business owners get their time back.</span>
+      <span>Auckland, New Zealand</span>
     </div>
   </footer>
 </body>
