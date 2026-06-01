@@ -385,6 +385,25 @@
       white-space: nowrap;
     }
 
+    .offer-buttons {
+      display: grid;
+      gap: 8px;
+      justify-items: end;
+    }
+
+    .intake-link {
+      color: var(--teal);
+      font-size: 12px;
+      font-weight: 800;
+      text-decoration: none;
+      text-align: right;
+    }
+
+    .intake-link:hover,
+    .final-intake-link:hover {
+      text-decoration: underline;
+    }
+
     .signal {
       position: relative;
       margin-top: -34px;
@@ -490,6 +509,91 @@
       margin-bottom: 0;
       color: var(--muted);
       font-size: 14px;
+    }
+
+    .intake-section {
+      background: #ffffff;
+    }
+
+    .intake-panel {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.95fr);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--line);
+    }
+
+    .intake-copy,
+    .intake-checklist {
+      padding: 32px;
+      background: #ffffff;
+    }
+
+    .intake-copy h2 {
+      margin-bottom: 12px;
+    }
+
+    .intake-copy p {
+      max-width: 640px;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .intake-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .btn-outline {
+      background: #ffffff;
+      color: var(--ink);
+      border-color: var(--line);
+    }
+
+    .intake-checklist {
+      background: var(--teal-soft);
+    }
+
+    .intake-checklist ol {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 14px;
+    }
+
+    .intake-checklist li {
+      display: grid;
+      grid-template-columns: 34px 1fr;
+      gap: 12px;
+      align-items: start;
+    }
+
+    .intake-checklist b {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      border-radius: var(--radius);
+      background: var(--teal);
+      color: #ffffff;
+      font-size: 12px;
+    }
+
+    .intake-checklist strong {
+      display: block;
+      margin-bottom: 3px;
+      font-size: 15px;
+    }
+
+    .intake-checklist span {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.45;
     }
 
     .card-number {
@@ -929,6 +1033,16 @@
       font-size: 12px;
     }
 
+    .final-intake-link {
+      display: block;
+      margin-top: 12px;
+      color: #8cd9cd;
+      text-align: center;
+      font-size: 13px;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
     footer {
       padding: 28px 0;
       background: var(--ink);
@@ -966,7 +1080,8 @@
       .receive-grid,
       .why-grid,
       .signal-grid,
-      .truth-grid {
+      .truth-grid,
+      .intake-panel {
         grid-template-columns: 1fr;
       }
       .pain-card,
@@ -1042,6 +1157,16 @@
       }
       .offer-action .btn {
         width: 100%;
+      }
+      .offer-buttons {
+        justify-items: stretch;
+      }
+      .intake-link {
+        text-align: center;
+      }
+      .intake-actions {
+        display: grid;
+        grid-template-columns: 1fr;
       }
       .signal {
         margin-top: -22px;
@@ -1171,9 +1296,12 @@
           <div class="offer-action">
             <div>
               <strong>Ready to stop guessing?</strong>
-              <span>PayPal or card. Intake details follow payment confirmation.</span>
+              <span>PayPal or card. After payment, open the Telegram intake.</span>
             </div>
-            <a class="btn" href="https://www.paypal.com/ncp/payment/8G3VP4366HLWU">Get started</a>
+            <div class="offer-buttons">
+              <a class="btn" href="https://www.paypal.com/ncp/payment/8G3VP4366HLWU">Pay $79</a>
+              <a class="intake-link" href="https://t.me/TailorFlow_bot?start=paid" target="_blank" rel="noopener">Already paid? Open Telegram intake</a>
+            </div>
           </div>
         </aside>
       </div>
@@ -1285,6 +1413,54 @@
             <h3>You get a plan you can follow</h3>
             <p>Within 2 working days, a short plain-English plan lands in your inbox.</p>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="intake-section" id="intake">
+      <div class="wrap">
+        <div class="intake-panel">
+          <div class="intake-copy">
+            <div class="label">After payment</div>
+            <h2>Start your TailorFlow intake in Telegram.</h2>
+            <p>Once you pay, open Telegram and answer a few easy questions. Your answers are saved for Jeff, so he can prepare your first workflow plan within 2 working days.</p>
+            <div class="intake-actions">
+              <a class="btn btn-primary" href="https://www.paypal.com/ncp/payment/8G3VP4366HLWU">Pay $79</a>
+              <a class="btn btn-outline" href="https://t.me/TailorFlow_bot?start=paid" target="_blank" rel="noopener">Open Telegram intake</a>
+            </div>
+          </div>
+          <div class="intake-checklist" aria-label="Payment handoff steps">
+            <ol>
+              <li>
+                <b>1</b>
+                <div>
+                  <strong>Pay with PayPal or card</strong>
+                  <span>One payment only. No subscription.</span>
+                </div>
+              </li>
+              <li>
+                <b>2</b>
+                <div>
+                  <strong>Tap Open Telegram intake</strong>
+                  <span>If Telegram asks, tap Start to begin the TailorFlow bot.</span>
+                </div>
+              </li>
+              <li>
+                <b>3</b>
+                <div>
+                  <strong>Answer in your easiest language</strong>
+                  <span>English, Korean, or Chinese are all fine.</span>
+                </div>
+              </li>
+              <li>
+                <b>4</b>
+                <div>
+                  <strong>Receive your first workflow plan</strong>
+                  <span>Jeff reviews your answers and sends it within 2 working days.</span>
+                </div>
+              </li>
+            </ol>
+          </div>
         </div>
       </div>
     </section>
@@ -1432,6 +1608,7 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg>
           </a>
           <div class="fineprint">PayPal or card - no subscription - 7-day money back</div>
+          <a class="final-intake-link" href="https://t.me/TailorFlow_bot?start=paid" target="_blank" rel="noopener">Already paid? Start your Telegram intake</a>
         </div>
       </div>
     </section>
